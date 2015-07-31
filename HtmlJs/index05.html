@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>setInterval和setTimeout的区别</title>
+    <script>
+//        document.write("width:" + window.innerWidth + " height:" + window.innerHeight);// 获得窗口内部的宽度高度
+
+        var myTime = setInterval(function () {
+            getTime();
+        }, "1000");
+
+        function getTime() {
+            var today = new Date();
+            var t = today.toLocaleTimeString();
+            document.getElementById("pid").innerHTML = t;
+        }
+
+        function stopTime() {
+            clearInterval(myTime)
+        }
+
+        var win;
+        function myWin(){
+            alert("hello");
+            win = setTimeout(function(){myWin()}, 1000)
+        }
+        function stopMyWin(){
+            clearTimeout(win);
+        }
+    </script>
+</head>
+<body onload="myWin()">
+<p id="pid"></p>
+<button onclick="stopTime()">按钮</button>
+
+<button onclick="stopMyWin()">停止</button>
+
+</body>
+</html>

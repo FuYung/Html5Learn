@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="utf-8" />
+		<title>句柄</title>
+
+	</head>
+
+	<body>
+		<div id="div">
+			<button id="btn">按钮</button>
+			<a href="http://www.baidu.com" target="_blank" id="aid">百度</a>
+		</div>
+		<script>
+			var btn = document.getElementById("btn");
+			/* 句柄 */
+			 //			btn.addEventListener("click", hello);
+			 //			btn.addEventListener("click", world);
+			 //			
+			 //			btn.removeEventListener("click", hello);
+			 //			function hello() {
+			 //				alert("hello");
+			 //			}
+			 //			function world() {
+			 //				alert("world");
+			 //			}
+			 //			if (btn.addEventListener) {
+			 //				btn.addEventListener("click", demo); // DOM 2级事件（不会覆盖）
+			 //			} else if (btn.attachEvent) {
+			 //				btn.attachEvent("onclick", demo); // IE8以下（添加事件）
+			 //				//				btn.detachEvent("onclick", demo);// IE8以下（移除事件）
+			 //			} else {
+			 //				btn.onclick = demo(); // DOM 0级事件（会覆盖）
+			 //			}
+			 //
+			 //			function demo() {
+			 //				alert("demo");
+			 //			}
+			/*事件的冒泡*/
+			btn.addEventListener("click", hello);
+
+			function hello(e) {
+				alert(e.type);
+				alert(e.target);
+				e.stopPropagation(); // 阻止事件冒泡
+			}
+			document.getElementById("div").addEventListener("click", world); // 执行完btn之后，自动执行div的click事件，此为事件的冒泡，如需阻止，在hello中加入e.stopPropagation();
+			function world() {
+				alert("world");
+			}
+			document.getElementById("aid").addEventListener("click", showA);
+
+			function showA(event) {
+//				event.stopPropagation();
+//				event.preventDefault(); // 阻止默认事件的执行
+			}
+		</script>
+	</body>
+
+</html>

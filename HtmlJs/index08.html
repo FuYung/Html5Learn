@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p id="pid"></p>
+<button id="btn" onclick="obb()">按钮</button>
+<script>
+    function obb() {
+        var hostname = window.location.hostname;
+        var host = location.host;
+        var port = location.port;
+        var protocol = location.protocol;
+        var pathname = location.pathname;
+        location.assign("http://www.baidu.com");
+
+        document.getElementById("pid").innerHTML = "hostname" + hostname + " host:" + host +
+                " port:" +
+                port + " protocol:" + protocol + " pathname:" + pathname;
+    }
+</script>
+</body>
+</html>

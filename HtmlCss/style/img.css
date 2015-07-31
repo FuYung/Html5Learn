@@ -1,0 +1,21 @@
+body{
+    width: 70%;
+    height: auto;
+    margin: 10px auto;
+    background-color: #74aae6;
+}
+
+.image{
+    border: 1px solid #999999;
+    float: left;
+    text-align: center;
+    margin: 5px;
+}
+img{
+    margin: 5px;
+    opacity: 1;
+}
+.text{
+    font-size: small;
+    margin-bottom: 5px;
+}

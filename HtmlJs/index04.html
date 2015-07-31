@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<ul id="uid">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<div>
+			<a href="#" id="aid"></a>
+		</div>
+		<script>
+			function getChildNode() {
+					var uNodes = document.getElementById("uid").childNodes;
+					alert(uNodes.length);
+					alert(uNodes[0].nodeType);
+				}
+				//			getChildNode();
+
+			function getParentNode() {
+					var parentNode = document.getElementById("aid").parentNode;
+					alert(parentNode.nodeName);
+				}
+				//			getParentNode();
+
+			function createNode() {
+					var body = document.body;
+					var input = document.createElement("input");
+					input.type = "button";
+					input.value = "submit"
+					body.appendChild(input);
+				}
+				//			createNode();
+
+			function getSize() {
+				var width = document.body.offsetWidth || document.documentElement.offsetWidth;
+				var height = document.body.offsetHeight || document.documentElement.offsetHeight;
+				alert("width:" + width + " height:" + height);
+			}
+//			getSize();
+
+			function getScrollSize() {
+				var width = document.body.scrollWidth;
+				var height = document.body.scrollHeight;
+				alert("width:" + width + " height:" + height);
+			}
+			getScrollSize();
+		</script>
+	</body>
+
+</html>

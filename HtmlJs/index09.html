@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p id="pid"></p>
+<button id="btn" onclick="obb()">按钮</button>
+<script>
+    function obb() {
+        var availWidth = screen.availWidth;
+        var availHeight = screen.availHeight;
+
+
+
+        document.getElementById("pid").innerHTML += "可用宽度:" + availWidth + " 可用高度:" + availHeight;
+        document.getElementById("pid").innerHTML += "宽度:" + screen.width + " 高度:" + screen.height;
+    }
+</script>
+</body>
+</html>
