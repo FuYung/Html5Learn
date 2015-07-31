@@ -24,7 +24,7 @@ window.onload = function () {
 };
 
 /**
- * ÅĞ¶ÏÊÇ·ñĞèÒª×Ô¶¯¼ÓÔØÊı¾İ
+ * åˆ¤æ–­æ˜¯å¦éœ€è¦è‡ªåŠ¨åŠ è½½æ•°æ®
  */
 function checkFlag() {
     var cparent = document.getElementById("container");
@@ -35,44 +35,44 @@ function checkFlag() {
     var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
 
-    if ((scrollTop + windowHeight) > lastContentHeight) {// µ±Ò³Ãæ¸ß¶È¼ÓÉÏ´°¿Ú¸ß¶È´óÓÚ×îºóÒ»ÕÅÍ¼Æ¬µ½¶¥²¿µÄ¸ß¶ÈÊ±£¬×Ô¶¯¼ÓÔØÊı¾İ
+    if ((scrollTop + windowHeight) > lastContentHeight) {// å½“é¡µé¢é«˜åº¦åŠ ä¸Šçª—å£é«˜åº¦å¤§äºæœ€åä¸€å¼ å›¾ç‰‡åˆ°é¡¶éƒ¨çš„é«˜åº¦æ—¶ï¼Œè‡ªåŠ¨åŠ è½½æ•°æ®
         return true;
     }
 }
 
 function imgLocation(parent, content) {
-    // ½«parentÏÂÃæËùÓĞµÄcontentÔªËØÈ¡³ö
+    // å°†parentä¸‹é¢æ‰€æœ‰çš„contentå…ƒç´ å–å‡º
     var cparent = document.getElementById(parent);
     var ccontent = getChildElement(cparent, content);
     console.log(ccontent);
 
-    // »ñµÃÍ¼Æ¬µÄ¿í¶È
+    // è·å¾—å›¾ç‰‡çš„å®½åº¦
     var imgWidth = ccontent[0].offsetWidth;
-    // Ò»ĞĞ·Å¶àÉÙÕÅÍ¼Æ¬=ÆÁÄ»µÄ¿í¶È/Ã¿ÕÅÍ¼Æ¬ËùÕ¼¿í¶È
+    // ä¸€è¡Œæ”¾å¤šå°‘å¼ å›¾ç‰‡=å±å¹•çš„å®½åº¦/æ¯å¼ å›¾ç‰‡æ‰€å å®½åº¦
     var cols = Math.floor(document.documentElement.clientWidth / imgWidth);
     cparent.style.cssText = "width:" + cols * imgWidth + "px;margin:0px auto";
 
     var boxHeightArr = [];
     for (var i = 0; i < ccontent.length; i++) {
         if (i < cols) {
-            boxHeightArr[i] = ccontent[i].offsetHeight;// ½«Ò»ĞĞÖĞËùÓĞµÄÍ¼Æ¬µÄ¸ß¶È·ÅÈëÊı×éÖĞ
+            boxHeightArr[i] = ccontent[i].offsetHeight;// å°†ä¸€è¡Œä¸­æ‰€æœ‰çš„å›¾ç‰‡çš„é«˜åº¦æ”¾å…¥æ•°ç»„ä¸­
         } else {
-            var minHeight = Math.min.apply(null, boxHeightArr);// µÃµ½¸ß¶È×îĞ¡µÄÍ¼Æ¬¸ß¶È
-            var minIndex = getMinHeightIndex(boxHeightArr, minHeight); // µÃµ½×îĞ¡¸ß¶ÈµÄÍ¼Æ¬µÄËùÔÚÎ»ÖÃ
+            var minHeight = Math.min.apply(null, boxHeightArr);// å¾—åˆ°é«˜åº¦æœ€å°çš„å›¾ç‰‡é«˜åº¦
+            var minIndex = getMinHeightIndex(boxHeightArr, minHeight); // å¾—åˆ°æœ€å°é«˜åº¦çš„å›¾ç‰‡çš„æ‰€åœ¨ä½ç½®
             ccontent[i].style.position = "absolute";
             ccontent[i].style.top = minHeight + "px";
             ccontent[i].style.left = ccontent[minIndex].offsetLeft + "px";
-            boxHeightArr[minIndex] = boxHeightArr[minIndex]+ccontent[i].offsetHeight;// ½«¸ß¶È×îĞ¡µÄÎ»ÖÃµÄÍ¼Æ¬µÄ¸ß¶È¼ÓÉÏÌí¼ÓÔÚºóÃæµÄÍ¼Æ¬¸ß¶È£¬Èç´ËÑ­»·
+            boxHeightArr[minIndex] = boxHeightArr[minIndex]+ccontent[i].offsetHeight;// å°†é«˜åº¦æœ€å°çš„ä½ç½®çš„å›¾ç‰‡çš„é«˜åº¦åŠ ä¸Šæ·»åŠ åœ¨åé¢çš„å›¾ç‰‡é«˜åº¦ï¼Œå¦‚æ­¤å¾ªç¯
         }
     }
 }
 
 /**
- * µÃµ½¸ß¶È×îĞ¡µÄÍ¼Æ¬µÄË÷Òı
+ * å¾—åˆ°é«˜åº¦æœ€å°çš„å›¾ç‰‡çš„ç´¢å¼•
  *
- * @param boxHeightArr Ò»ĞĞÍ¼Æ¬¸ß¶ÈµÄÊı×é
- * @param minHeight ×îĞ¡¸ß¶È
- * @returns {string} Ë÷Òı
+ * @param boxHeightArr ä¸€è¡Œå›¾ç‰‡é«˜åº¦çš„æ•°ç»„
+ * @param minHeight æœ€å°é«˜åº¦
+ * @returns {string} ç´¢å¼•
  */
 function getMinHeightIndex(boxHeightArr, minHeight) {
     for (var i in boxHeightArr) {
