@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button onclick="video()">播放/暂停</button>
+<button onclick="videoBig()">放大</button>
+<button onclick="videoSmall()">缩小</button><br/>
+<video id="video" src="video/什么是HTML5.mp4" controls = "controls">您的浏览器不支持</video>
+<script >
+    var v = document.getElementById("video");
+    function video() {
+        if (v.paused) {
+            v.play();
+        } else {
+            v.pause();
+        }
+    }
+    function videoBig() {
+        v.width = 1000;
+        v.height = 1000;
+    }
+    function videoSmall(){
+        v.width = 300;
+        v.height = 300;
+    }
+</script>
+</body>
+</html>
