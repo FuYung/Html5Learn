@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery淡入淡出</title>
+    <script type="application/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="application/javascript">
+        $(function(){
+            $("#in").click(function () {
+                $("div").fadeIn(2000);
+            });
+
+            $("#out").click(function () {
+                $("div").fadeOut(2000);
+            });
+
+            $("#toggle").click(function () {
+                $("div").fadeToggle(2000);
+            });
+            $("#to").click(function () {
+                $("#div1").fadeTo(1000, 0);
+                $("#div2").fadeTo(1000, 0.3);
+                $("#div3").fadeTo(1000, 0.7);
+                $("#div4").fadeTo(1000, 1);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="in">fadeIn</button>
+    <button id="out">fadeOut</button>
+    <button id="toggle">fadeToggle</button>
+    <button id="to">fadeTo</button>
+    <div id="div1" style="width: 80px;height: 80px; display: none; background-color: #ff6600"></div>
+    <div id="div2" style="width: 80px;height: 80px; display: none; background-color: #2E9206"></div>
+    <div id="div3" style="width: 80px;height: 80px; display: none; background-color: #74aae6"></div>
+    <div id="div4" style="width: 80px;height: 80px; display: none; background-color: #0000FF"></div>
+</body>
+</html>

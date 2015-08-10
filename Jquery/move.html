@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="application/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="application/javascript">
+        $(function () {
+            $("#flipshow").click(function () {
+                $("#content").slideDown("1000");
+            });
+
+            $("#fliphide").click(function () {
+                $("#content").slideUp("1000");
+            });
+
+            $("#fliptoggle").click(function () {
+                $("#content").slideToggle("1000");
+            });
+
+            $("#baidu").click(function () {
+                $("#a").attr({"href": "www.google.com", "title": "google"});
+            });
+        })
+    </script>
+
+    <style>
+        #content, #flipshow, #fliphide, #fliptoggle{
+            padding: 5px;
+            text-align: center;
+            background-color: #a5c8ee;
+            border: solid 1px #0054b5;
+        }
+        #content {
+            display: none;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="flipshow">显示</div>
+    <div id="fliphide">隐藏</div>
+    <div id="fliptoggle">显示/隐藏</div>
+    <div id="content">hello world</div>
+
+    <a href="http://baidu.com" title="baidu" id="a">baidu</a>
+    <button type="button" id="baidu">修改</button>
+</body>
+</html>

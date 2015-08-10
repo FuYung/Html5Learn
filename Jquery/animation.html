@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的显示与隐藏</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6600;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script type="application/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="application/javascript" src="js/animation.js"></script>
+</head>
+<body>
+    <p>hello</p>
+    <button type="button" id="hide">隐藏</button>
+    <button type="button" id="show">显示</button>
+    <button type="button" id="toggle">隐藏/显示</button>
+
+    <script>
+        for (var i = 0; i < 5; i++) {
+            $("<div>").appendTo(document.body);
+        }
+        $("div").click(function () {
+            $(this).hide(2000, function () {
+                $(this).remove();//移除掉div
+            });
+        });
+    </script>
+</body>
+</html>
