@@ -35,6 +35,12 @@
             display: none;
             padding: 30px;
         }
+        img {
+            filter:alpha(opacity=40);
+            -moz-opacity: 0.8;/*Note: Firefox 3.5 and later do not support -moz-opacity. By now, you should be using simply opacity.*/
+            opacity:0.8;
+            /*for IE :wayto trigger IE layout:convert to block element，and then define block size*/
+        }
     </style>
 </head>
 <body>
@@ -45,5 +51,8 @@
 
     <a href="http://baidu.com" title="baidu" id="a">baidu</a>
     <button type="button" id="baidu">修改</button>
+
+
+<img id="img1" src="img/1.jpg">
 </body>
 </html>

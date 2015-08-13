@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery盒子模型</title>
+    <script type="application/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="application/javascript">
+        $(function () {
+//            alert($("#div").width());
+//            alert($("#div").height());
+            alert($("#div").innerWidth());
+            alert($("#div").innerHeight());//两个内边距padding（50×2），元素高度（200）
+            alert($("#div").outerWidth());//两个内边距padding（50×2），两个实线高度（2×2），元素高度（200）
+            alert($("#div").outerHeight(true));//两个外边距margin（50×2），两个内边距padding（50×2），两个实线高度（2×2），元素高度（200）
+        });
+
+    </script>
+    <style rel="stylesheet">
+        #div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #0000FF;
+            background-color: #a5c8ee;
+            margin: 50px;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>
